@@ -1,0 +1,15 @@
+*.rar
+*.zip
+*.7z
+*.tar
+*.gz
+*.bz2
+*.dmg
+*.iso
+.DS_Store
+.vscode
+.idea
+.env
+.env.local
+.env.development
+.env.production
