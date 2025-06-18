@@ -80,6 +80,7 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.defaultUserShell = pkgs.zsh;
   users.users.bence = {
     isNormalUser = true;
     description = "Bence Toth";
@@ -109,7 +110,14 @@
       alacritty
       neofetch
       git
+      zsh
   ];
+
+  programs.zsh.enable = true;
+  programs.zsh.ohMyZsh = {
+    enable = true;
+    plugins = [ "git" "sudo" "docker" "kubectl" ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
