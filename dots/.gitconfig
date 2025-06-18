@@ -1,0 +1,34 @@
+[user]
+	name = Bence Toth
+	email = 36576531+bencetotht@users.noreply.github.com
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[core]
+    compression = 9
+    whitespace = error
+    preloadindex = true
+
+[url "git@github.com:bencetotht/"]
+    insteadOf = "bt":
+
+[init]
+    defaultBranch = main
+
+[status]
+    showUntrackedFiles = all
+    showStash = true
+    branch = true
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = -taggerdate
+
+[push]
+    autoSetupRemote = true
