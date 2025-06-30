@@ -28,6 +28,7 @@ alias lg="lazygit"
 alias ld="lazydocker"
 alias yz="yazi"
 alias diff="delta $1 --side-by-side"
+alias vim="nvim"
 
 # DNS settings for mac
 alias dns-reset="sudo networksetup -setdnsservers Wi-Fi empty"
