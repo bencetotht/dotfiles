@@ -1,6 +1,10 @@
 ## Create symlinks with stow
-```sh
-stow .
+```bash
+stow -t ~ .
+```
+Remove symlinks:
+```bash
+stow -t ~ -D
 ```
 
 ## Set global .gitignore file
