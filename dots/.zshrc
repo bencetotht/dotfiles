@@ -24,6 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # aliases
 alias c="open $1 -a \"Cursor\""
 alias v="open $1 -a \"Visual Studio Code\""
+alias zed="open $1 -a \"Zed\""
 alias lg="lazygit"
 alias ld="lazydocker"
 alias yz="yazi"
