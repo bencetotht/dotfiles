@@ -2,6 +2,9 @@
 	name = Bence Toth
 	email = 36576531+bencetotht@users.noreply.github.com
 
+[http]
+    postBuffer = 524288000
+
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
@@ -12,6 +15,7 @@
     compression = 9
     whitespace = error
     preloadindex = true
+	excludesfile = /Users/bencetoth/.gitignore
 
 [url "git@github.com:bencetotht/"]
     insteadOf = "bt":
