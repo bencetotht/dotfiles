@@ -30,6 +30,9 @@ alias ld="lazydocker"
 alias yz="yazi"
 alias diff="delta $1 --side-by-side"
 alias vim="nvim"
+alias tf="terraform"
+alias otf="op run --env-file .env -- terraform"
+alias k="kubectl"
 
 # DNS settings for mac
 alias dns-reset="sudo networksetup -setdnsservers Wi-Fi empty"
@@ -38,7 +41,8 @@ alias dns-google="sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4"
 alias dns-cf="sudo networksetup -setdnsservers Wi-Fi 1.1.1.1"
 alias dns-paks="sudo networksetup -setdnsservers Wi-Fi 192.168.88.60"
 
-#source /Users/bencetoth/.config/op/plugins.sh
+# 1Password Plugins
+source /Users/bence/.config/op/plugins.sh
 
 eval "$(zoxide init zsh)"
 
