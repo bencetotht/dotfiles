@@ -10,7 +10,11 @@ setopt appendhistory
 # zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-plugins=(git direnv)
+plugins=(git 
+	direnv
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -33,8 +37,9 @@ alias vim="nvim"
 alias tf="terraform"
 alias otf="op run --env-file .env -- terraform"
 alias k="kubectl"
+alias le="eza -l --git"
 
-# DNS settings for mac
+# DNS
 alias dns-reset="sudo networksetup -setdnsservers Wi-Fi empty"
 alias dns-home="sudo networksetup -setdnsservers Wi-Fi 192.168.50.1"
 alias dns-google="sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4"
