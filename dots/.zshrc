@@ -42,7 +42,7 @@ alias dns-cf="sudo networksetup -setdnsservers Wi-Fi 1.1.1.1"
 alias dns-paks="sudo networksetup -setdnsservers Wi-Fi 192.168.88.60"
 
 # 1Password Plugins
-source /Users/bence/.config/op/plugins.sh
+source /Users/$LOGNAME/.config/op/plugins.sh
 
 eval "$(zoxide init zsh)"
 
