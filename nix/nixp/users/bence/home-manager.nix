@@ -1,4 +1,4 @@
-{ isWSL, inputs, ... }:
+{ inputs, ... }:
 
 { config, lib, pkgs, ... }:
 
@@ -243,7 +243,7 @@ in {
   };
 
   # Make cursor not tiny on HiDPI screens
-  home.pointerCursor = lib.mkIf (isLinux && !isWSL) {
+  home.pointerCursor = lib.mkIf (isLinux) {
     name = "Vanilla-DMZ";
     package = pkgs.vanilla-dmz;
     size = 128;
