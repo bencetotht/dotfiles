@@ -9,10 +9,12 @@
 
   users.users.bence = {
     isNormalUser = true;
+    description = "Bence Toth";
     home = "/home/bence";
     extraGroups = [ "docker" "lxd" "wheel" "networkmanager"];
     shell = pkgs.zsh;
-    hashedPassword = "$6$p5nPhz3G6k$6yCK0m3Oglcj4ZkUXwbjrG403LBZkfNwlhgrQAqOospGJXJZ27dI84CbIYBNsTgsoH650C1EBsbCKesSVPSpB1";
+    # mkpasswd -m sha-512 password
+    hashedPassword = "$6$pIsEjWjJ5M46WA1c$G8daVmgyAy2fJ62t/ceDkMWSqBVRMPVJS5j2a3q5dvEzOYplV6DYpLNxb7tjgAM9QRC7f2Y09YRbAmJCLMOMs1";
     # openssh.authorizedKeys.keys = [
     #   ""
     # ];

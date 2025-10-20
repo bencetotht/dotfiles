@@ -1,4 +1,6 @@
-{ pkgs, ... }:
+{ inputs, ... }:
+
+{ config, lib, pkgs, ... }:
 
 {
   # imports = [ ./neovim.nix ];

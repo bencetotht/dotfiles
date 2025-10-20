@@ -8,7 +8,7 @@
   ];
 
   # Be careful updating this.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
 
   nix = {
     package = pkgs.nixVersions.latest;
@@ -23,11 +23,7 @@
     "mupdf-1.17.0"
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.loader.systemd-boot.consoleMode = "0";
-
+  networking.networkmanager.enable = true;
   networking.hostName = "nixvm";
 
   time.timeZone = "Europe/Budapest";
@@ -86,28 +82,48 @@
   # };
 
   # List packages installed in system profile. To search, run: nix search wget
-  environment.systemPackages = with pkgs; [
-    cachix
-    gnumake
-    killall
-    xclip
-
-    # For hypervisors that support auto-resizing, this script forces it.
-    (writeShellScriptBin "xrandr-auto" ''
-      xrandr --output Virtual-1 --auto
-    '')
-  ] ++ lib.optionals (currentSystemName == "vm-aarch64") [
-    # vmware user tools clipboard
-    gtkmm3
-  ];
+#   environment.systemPackages = with pkgs; [
+#     cachix
+#     gnumake
+#     killall
+#     xclip
+#
+#     # For hypervisors that support auto-resizing, this script forces it.
+#     (writeShellScriptBin "xrandr-auto" ''
+#       xrandr --output Virtual-1 --auto
+#     '')
+#   ] ++ lib.optionals (currentSystemName == "vm-aarch64") [
+#     # vmware user tools clipboard
+#     gtkmm3
+#   ];
 
   # desktop environment.
-  services.xserver = lib.mkIf (config.specialisation != {}) {
-    enable = true;
-    xkb.layout = "hu";
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
+  # x11 - we will nuke it later
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.xserver.xkb = {
+    layout = "hu";
+    variant = "";
   };
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "bence";
+
+  environment.systemPackages = with pkgs; [
+    vim
+    wget
+    gh
+    git
+  ];
+
+
+
+#   services.xserver = lib.mkIf (config.specialisation != {}) {
+#     enable = true;
+#     xkb.layout = "hu";
+#     desktopManager.gnome.enable = true;
+#     displayManager.gdm.enable = true;
+#   };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

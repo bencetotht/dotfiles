@@ -20,7 +20,7 @@ in systemFunc rec {
   inherit system;
 
   modules = [
-    { nixpkgs.overlays = overlays; }
+    #{ nixpkgs.overlays = overlays; }
     { nixpkgs.config.allowUnfree = true; }
 
     machineConfig
