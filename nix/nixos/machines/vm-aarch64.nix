@@ -9,10 +9,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.consoleMode = "0";
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-label/nixos-graphical-25.05-aarch64";
-    fsType = "ext4";
-  };
+#   fileSystems."/" = {
+#     device = "/dev/disk/by-label/nixos-graphical-25.05-aarch64";
+#     fsType = "ext4";
+#   };
 
   # ens160 is the default interface for vmware fusion
   networking.interfaces.ens160.useDHCP = true;

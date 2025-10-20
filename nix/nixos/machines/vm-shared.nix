@@ -114,8 +114,8 @@
     wget
     gh
     git
+    lazygit
   ];
-
 
 
 #   services.xserver = lib.mkIf (config.specialisation != {}) {
