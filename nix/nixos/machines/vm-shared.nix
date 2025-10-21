@@ -125,6 +125,10 @@
     gh
     git
     lazygit
+    i3status
+    dmenu
+    feh
+    picom
   ];
 
 
