@@ -19,11 +19,17 @@ in {
   home.username = "bence";
   home.homeDirectory = "/home/bence";
 
+  home.file = {
+    ".config/i3/config".source = ./configs/i3;
+  }
+
   home.packages = [
     pkgs.xfce.xfce4-terminal
     pkgs.eza
     pkgs.fd
     pkgs.fzf
+    pkgs.rofi
+    pkgs.firefox
   ];
 
   xsession.windowManager.i3 = {
