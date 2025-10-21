@@ -100,14 +100,24 @@
   # desktop environment.
   # x11 - we will nuke it later
   services.xserver.enable = true;
+  services.xserver.windowManager.i3.enable = true;
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.displayManager.defaultSession = "none+i3";
+  # services.desktopManager.plasma6.enable = true;
   services.xserver.xkb = {
     layout = "hu";
     variant = "";
   };
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "bence";
+
+  # security.pam.services = {
+  #   i3lock.enable = true;
+  #   i3lock-color.enable = true;
+  #   xlock.enable = true;
+  #   xscreensaver.enable = true;
+  # };
+
 
   environment.systemPackages = with pkgs; [
     vim

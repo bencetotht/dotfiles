@@ -26,6 +26,18 @@ in {
     pkgs.fzf
   ];
 
+  xsession.windowManager.i3 = {
+    enable = true;
+    package = pkgs.i3-gaps;
+    config = {
+      modifier = "Mod4";
+      gaps = {
+        inner = 10;
+        outer = 5;
+      };
+    };
+  };
+
   # home.sessionVariables = {
   #   LANG = "en_US.UTF-8";
   #   LC_CTYPE = "en_US.UTF-8";
@@ -38,30 +50,14 @@ in {
     shellAliases = shellAliases;
   };
 
-#   programs.alacritty = {
-#     enable = true;
-#
-#     settings = {
-#       env.TERM = "xterm-256color";
-#
-#       key_bindings = [
-#         { key = "K"; mods = "Command"; chars = "ClearHistory"; }
-#         { key = "V"; mods = "Command"; action = "Paste"; }
-#         { key = "C"; mods = "Command"; action = "Copy"; }
-#         { key = "Key0"; mods = "Command"; action = "ResetFontSize"; }
-#         { key = "Equals"; mods = "Command"; action = "IncreaseFontSize"; }
-#         { key = "Subtract"; mods = "Command"; action = "DecreaseFontSize"; }
-#       ];
-#     };
-#   };
   programs.ghostty.enable = true;
 
-  home.pointerCursor = lib.mkIf (isLinux) {
-    name = "Vanilla-DMZ";
-    package = pkgs.vanilla-dmz;
-    size = 128;
-    x11.enable = true;
-  };
+  # home.pointerCursor = lib.mkIf (isLinux) {
+  #   name = "Vanilla-DMZ";
+  #   package = pkgs.vanilla-dmz;
+  #   size = 128;
+  #   x11.enable = true;
+  # };
 
   home.stateVersion = "25.05";
 }
