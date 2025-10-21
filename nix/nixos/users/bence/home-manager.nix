@@ -20,7 +20,7 @@ in {
   home.homeDirectory = "/home/bence";
 
   xdg.configFile = {
-    "i3/config".source = ./configs/i3;
+    "i3/config".text = builtins.readFile ./config/i3;
   };
 
   home.packages = [
