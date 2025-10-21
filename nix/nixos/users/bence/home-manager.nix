@@ -19,8 +19,8 @@ in {
   home.username = "bence";
   home.homeDirectory = "/home/bence";
 
-  home.file = {
-    ".config/i3/config".source = ./configs/i3;
+  xdg.configFile = {
+    "i3/config".source = ./configs/i3;
   };
 
   home.packages = [
