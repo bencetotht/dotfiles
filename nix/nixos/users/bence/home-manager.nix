@@ -21,7 +21,7 @@ in {
 
   home.file = {
     ".config/i3/config".source = ./configs/i3;
-  }
+  };
 
   home.packages = [
     pkgs.xfce.xfce4-terminal
