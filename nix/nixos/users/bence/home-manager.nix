@@ -21,6 +21,7 @@ in {
 
   xdg.configFile = {
     "i3/config".text = builtins.readFile ./configs/i3;
+    "i3status/config".text = builtins.readFile ./configs/i3status;
   };
 
   home.packages = [
@@ -41,6 +42,7 @@ in {
         inner = 10;
         outer = 5;
       };
+      terminal = "ghostty";
     };
   };
 
