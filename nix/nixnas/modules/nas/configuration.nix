@@ -38,7 +38,7 @@
       ];
     };
     defaultGateway = {
-      address = "192.168.50.1";
+      address = "1.1.1.1";
       interface = "eno1";
     };
     hostName = "nixnas";
