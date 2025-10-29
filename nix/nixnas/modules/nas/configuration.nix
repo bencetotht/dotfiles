@@ -65,7 +65,7 @@
   users.users.bence = {
     isNormalUser = true;
     description = "Bence Toth";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     hashedPassword = "$6$pIsEjWjJ5M46WA1c$G8daVmgyAy2fJ62t/ceDkMWSqBVRMPVJS5j2a3q5dvEzOYplV6DYpLNxb7tjgAM9QRC7f2Y09YRbAmJCLMOMs1";
     home = "/home/bence";
@@ -96,13 +96,15 @@
     settings.PasswordAuthentication = false;
     settings.PermitRootLogin = "no";
   };
+
   services.fail2ban = {
     enable = true;
     maxretry = 5;
     bantime = "24h";
   };
 
-  # Enable tailscale
+  virtualisation.docker.enable = true;
+
   services.tailscale.enable = true;
 
   # Set the state version - don't change this manually
