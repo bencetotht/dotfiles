@@ -91,7 +91,7 @@
     git
     lazygit
     gh
-    lm-sensors
+    lm_sensors
     powertop
     smartmontools
     hddtemp
