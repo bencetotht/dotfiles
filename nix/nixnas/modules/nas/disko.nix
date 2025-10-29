@@ -18,7 +18,7 @@ in
               content = {
                 type = "filesystem";
                 format = "vfat";
-                mountpoint = "/boot";
+              mountpoint = "/boot";
               };
             };
             zfs = {
@@ -44,7 +44,8 @@ in
               content = {
                 type = "filesystem";
                 format = "vfat";
-                mountpoint = "/boot";
+              # Avoid conflict with the primary ESP; keep a secondary copy mounted separately
+              mountpoint = "/boot2";
               };
             };
             zfs = {
