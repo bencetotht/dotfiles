@@ -5,19 +5,19 @@
   #   /etc/nixos/hardware-configuration.nix
   # ];
 
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        efiSupport = true;
-        device = "nodev";
-      };
-    };
-    supportedFilesystems = [ "zfs" ];
-    kernelModules = [ "zfs" ];
-  };
+  # boot = {
+  #   loader = {
+  #     systemd-boot.enable = true;
+  #     efi.canTouchEfiVariables = true;
+  #     grub = {
+  #       enable = true;
+  #       efiSupport = true;
+  #       device = "nodev";
+  #     };
+  #   };
+  #   supportedFilesystems = [ "zfs" ];
+  #   kernelModules = [ "zfs" ];
+  # };
 
   networking = {
     useDHCP = true;
