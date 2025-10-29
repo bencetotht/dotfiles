@@ -56,18 +56,6 @@
 
   services.xserver.enable = false;
   time.timeZone = "Europe/Budapest";
-  # i18n.defaultLocale = "hu_HU.UTF-8";
-  # i18n.extraLocaleSettings = {
-  #   LC_ADDRESS = "hu_HU.UTF-8";
-  #   LC_IDENTIFICATION = "hu_HU.UTF-8";
-  #   LC_MEASUREMENT = "hu_HU.UTF-8";
-  #   LC_MONETARY = "hu_HU.UTF-8";
-  #   LC_NAME = "hu_HU.UTF-8";
-  #   LC_NUMERIC = "hu_HU.UTF-8";
-  #   LC_PAPER = "hu_HU.UTF-8";
-  #   LC_TELEPHONE = "hu_HU.UTF-8";
-  #   LC_TIME = "hu_HU.UTF-8";
-  # };
 
   users.users.bence = {
     isNormalUser = true;
@@ -93,10 +81,10 @@
   ];
 
   services.openssh.enable = true;
-  services.openssh.settings.PasswordAuthentication = true;
-  # services.openssh.settings.PermitRootLogin = "no";
+  services.openssh.settings.PasswordAuthentication = false;
+  services.openssh.settings.PermitRootLogin = "no";
 
-  # services.tailscale.enable = true;
+  services.tailscale.enable = true;
 
   system.stateVersion = "25.05";
 }
