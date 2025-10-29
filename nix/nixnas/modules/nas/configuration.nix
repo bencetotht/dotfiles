@@ -107,7 +107,7 @@
       maxtime = "168h";
       overalljails = true;
     };
-  }
+  };
 
   # Enable tailscale
   services.tailscale.enable = true;
