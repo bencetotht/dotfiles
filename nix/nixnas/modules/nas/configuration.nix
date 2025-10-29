@@ -1,6 +1,14 @@
 { config, lib, pkgs, ...}:
 
 {
+  nix = {
+    extraOptions = ''
+      experimental-features = nix-command flakes
+      keep-outputs = true
+      keep-derivations = true
+    '';
+  };
+
   boot = {
     loader = {
       grub = {
