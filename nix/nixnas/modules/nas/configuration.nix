@@ -27,8 +27,10 @@
   };
 
   networking = {
-    useDHCP = true;
+    useDHCP = false;
     networkmanager.enable = false;
+    nameservers = [ "1.1.1.1" ];
+    defaultGateway = "192.168.50.1";
     interfaces.eno1 = {
       ipv4.addresses = [
         {
@@ -36,10 +38,13 @@
           prefixLength = 24;
         }
       ];
-    };
-    defaultGateway = {
-      address = "1.1.1.1";
-      interface = "eno1";
+      ipv4.routes = [
+        {
+          address = "0.0.0.0";
+          prefixLength = 0;
+ 	  via = "192.168.50.1";
+        }
+      ];
     };
     hostName = "nixnas";
     hostId = "3f9c7a2b";
