@@ -1,9 +1,9 @@
 { config, lib, pkgs, ...}:
 
 {
-  imports = [
-    /etc/nixos/hardware-configuration.nix
-  ];
+  # imports = [
+  #   /etc/nixos/hardware-configuration.nix
+  # ];
 
   boot = {
     loader = {
