@@ -31,6 +31,8 @@
     networkmanager.enable = false;
     nameservers = [ "1.1.1.1" ];
     defaultGateway = "192.168.50.1";
+    hostName = "nixnas";
+    hostId = "3f9c7a2b";
     interfaces.eno1 = {
       ipv4.addresses = [
         {
@@ -42,12 +44,10 @@
         {
           address = "0.0.0.0";
           prefixLength = 0;
- 	  via = "192.168.50.1";
+          via = "192.168.50.1";
         }
       ];
     };
-    hostName = "nixnas";
-    hostId = "3f9c7a2b";
     firewall = {
       enable = false;
       # allowPing = true;
