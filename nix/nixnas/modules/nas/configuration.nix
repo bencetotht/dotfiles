@@ -1,6 +1,7 @@
 { config, lib, pkgs, ...}:
 
 {
+  # Enable flakes
   nix = {
     extraOptions = ''
       experimental-features = nix-command flakes
@@ -9,6 +10,7 @@
     '';
   };
 
+  # Set the boot to support zfs
   boot = {
     loader = {
       grub = {
@@ -26,6 +28,7 @@
     kernelModules = [ "zfs" ];
   };
 
+  # Network settings
   networking = {
     useDHCP = false;
     networkmanager.enable = false;
@@ -54,9 +57,11 @@
     };
   };
 
+  # General settings
   services.xserver.enable = false;
   time.timeZone = "Europe/Budapest";
 
+  # User settings
   users.users.bence = {
     isNormalUser = true;
     description = "Bence Toth";
@@ -69,7 +74,13 @@
     ];
   };
 
+  # Packages
   programs.zsh.enable = true;
+  programs.zsh.ohMyZsh = {
+    enable = true;
+    plugins = [ "git" "sudo" "docker" ];
+  };
+
   environment.systemPackages = with pkgs; [
     vim 
     wget
@@ -80,11 +91,27 @@
     gh
   ];
 
-  services.openssh.enable = true;
-  services.openssh.settings.PasswordAuthentication = false;
-  services.openssh.settings.PermitRootLogin = "no";
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = false;
+    settings.PermitRootLogin = "no";
+  };
+  serivces.fail2ban = {
+    enable = true;
+    maxretry = 5;
+    bantime = "24h";
+    bantime-increment = {
+      enable = true;
+      formula = "ban.Time * math.exp(float(ban.Count+1)*banFactor)/math.exp(1*banFactor)";
+      multipliers = "1 2 4 8 16 32 64";
+      maxtime = "168h";
+      overalljails = true;
+    };
+  }
 
+  # Enable tailscale
   services.tailscale.enable = true;
 
+  # Set the state version - don't change this manually
   system.stateVersion = "25.05";
 }
