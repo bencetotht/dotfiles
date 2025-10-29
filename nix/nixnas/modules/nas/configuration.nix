@@ -96,7 +96,7 @@
     settings.PasswordAuthentication = false;
     settings.PermitRootLogin = "no";
   };
-  serivces.fail2ban = {
+  services.fail2ban = {
     enable = true;
     maxretry = 5;
     bantime = "24h";
