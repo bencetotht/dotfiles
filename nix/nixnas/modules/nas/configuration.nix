@@ -25,7 +25,7 @@
       };
     };
     supportedFilesystems = [ "zfs" ];
-    kernelModules = [ "zfs" ];
+    kernelModules = [ "zfs" "coretemp" ];
   };
 
   # Network settings
@@ -60,6 +60,8 @@
   # General settings
   services.xserver.enable = false;
   time.timeZone = "Europe/Budapest";
+  powerManagement.powertop.enable = true;
+  system.autoUpgrade.enable = true;
 
   # User settings
   users.users.bence = {
@@ -89,6 +91,12 @@
     git
     lazygit
     gh
+    lm-sensors
+    powertop
+    smartmontools
+    hddtemp
+    hd-idle
+    hdparm
   ];
 
   services.openssh = {
