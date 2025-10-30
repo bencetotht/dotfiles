@@ -1,6 +1,11 @@
 { config, lib, pkgs, ...}:
 
 {
+
+  imports = [
+    ./filesystems
+  ];
+
   # Enable flakes
   nix = {
     extraOptions = ''
