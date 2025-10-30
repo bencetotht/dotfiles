@@ -124,6 +124,9 @@
         "default port" = "19999";
       };
     };
+    package = pkgs.netdata.override {
+      withCloudUi = true;
+    };
   };
 
   virtualisation.docker.enable = true;
