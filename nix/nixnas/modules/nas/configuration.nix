@@ -118,19 +118,6 @@
     bantime = "24h";
   };
 
-  services.netdata = {
-    enable = true;
-    config = {
-      global = {
-        "bind to" = "0.0.0.0";
-        "default port" = "19999";
-      };
-    };
-    package = pkgs.netdata.override {
-      withCloudUi = true;
-    };
-  };
-
   virtualisation.docker.enable = true;
 
   services.tailscale.enable = true;
