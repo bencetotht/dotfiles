@@ -122,10 +122,6 @@
       global = {
         "bind to" = "0.0.0.0";
         "default port" = "19999";
-        "memory mode" = "ram";
-        "debug log" = "none";
-        "access log" = "none";
-        "error log" = "syslog";
       };
     };
   };
