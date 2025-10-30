@@ -14,6 +14,8 @@
       keep-derivations = true
     '';
   };
+  
+  nixpkgs.config.allowUnfree = true;
 
   # Set the boot to support zfs
   boot = {
