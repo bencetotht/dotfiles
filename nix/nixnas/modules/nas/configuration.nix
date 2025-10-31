@@ -4,6 +4,7 @@
 
   imports = [
     ./filesystems
+    ./docker
   ];
 
   # Enable flakes
@@ -117,8 +118,6 @@
     maxretry = 5;
     bantime = "24h";
   };
-
-  virtualisation.docker.enable = true;
 
   services.tailscale.enable = true;
 
