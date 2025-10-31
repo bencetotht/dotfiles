@@ -4,6 +4,10 @@
   ...
 }:
 {
+  imports = [
+    ./snapraid.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     mergerfs
     mergerfs-tools
@@ -28,7 +32,7 @@
 
   # Mergerfs
   fileSystems."/mnt/w3storage" = {
-    device = "/mnt/w3d3:/mnt/w3d4";
+    device = "/mnt/w3d3";
     fsType = "fuse.mergerfs";
     options = [
       "defaults"
