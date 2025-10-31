@@ -63,6 +63,10 @@
       enable = false;
       # allowPing = true;
     };
+    extraHosts = 
+      ''
+        192.168.50.65 nixnas.local gitlab.local.bencetotht.hu
+      ''
   };
 
   # General settings
