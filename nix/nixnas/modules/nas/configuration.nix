@@ -93,6 +93,7 @@
   programs.zsh.ohMyZsh = {
     enable = true;
     plugins = [ "git" "sudo" "docker" ];
+    theme = "robbyrussell";
   };
 
   environment.systemPackages = with pkgs; [
