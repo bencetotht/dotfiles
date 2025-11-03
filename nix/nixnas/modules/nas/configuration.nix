@@ -5,6 +5,7 @@
   imports = [
     ./filesystems
     ./docker
+    ./metrics
   ];
 
   # Enable flakes
@@ -110,6 +111,7 @@
     hddtemp
     hd-idle
     hdparm
+    btop
   ];
 
   services.openssh = {
