@@ -18,7 +18,7 @@
       enable = true;
       devices = [ "/dev/sda" "/dev/sdb" "/dev/sdc" "/dev/sdd" ];
       port = 9633;
-    }
+    };
   };
 
   # systemd.services.snapraid-metrics = {
