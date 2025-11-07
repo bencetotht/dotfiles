@@ -24,7 +24,7 @@
         path = "/mnt/w3storage/tmbackup";
         browseable = "yes";
         writeable = "yes";
-        valid users = "tmuser";
+        "valid users" = "tmuser";
         "fruit:time machine" = "yes";
       };
     };
