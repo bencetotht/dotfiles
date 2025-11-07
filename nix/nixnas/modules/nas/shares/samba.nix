@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    samba4Full
+  ];
+
   services.samba = {
     enable = true;
     package = pkgs.samba4Full;
