@@ -6,6 +6,7 @@
     ./filesystems
     ./docker
     ./metrics
+    ./shares
   ];
 
   # Enable flakes
