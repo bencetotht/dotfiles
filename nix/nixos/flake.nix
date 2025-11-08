@@ -28,7 +28,7 @@
       };
       darwinConfigurations.mb-m1air = mkSystem "mb-m1air" {
         system = "aarch64-darwin";
-        user = "bencetoth";
+        user = "bence";
         darwin = true;
       };
     };

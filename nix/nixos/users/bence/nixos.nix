@@ -1,9 +1,21 @@
 { pkgs, inputs, ... }:
 
 {
+  imports = [
+    ../modules/i3
+  ];
   # environment.pathsToLink = [ "/share/zsh" ];
 
   # environment.localBinInPath = true;
+
+  home.packages = [
+    pkgs.xfce.xfce4-terminal
+    pkgs.eza
+    pkgs.fd
+    pkgs.fzf
+    pkgs.rofi
+    pkgs.firefox
+  ];
 
   programs.zsh.enable = true;
 
@@ -18,5 +30,12 @@
     # openssh.authorizedKeys.keys = [
     #   ""
     # ];
+  };
+
+  home.pointerCursor = lib.mkIf (isLinux) {
+    name = "Vanilla-DMZ";
+    package = pkgs.vanilla-dmz;
+    size = 128;
+    x11.enable = true;
   };
 }

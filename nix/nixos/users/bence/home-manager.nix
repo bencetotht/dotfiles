@@ -14,37 +14,8 @@ let
   } else {});
 
 in {
-  # imports = [ ./neovim.nix ];
-
   home.username = "bence";
-  home.homeDirectory = "/home/bence";
-
-  xdg.configFile = {
-    "i3/config".text = builtins.readFile ./configs/i3;
-    "i3status/config".text = builtins.readFile ./configs/i3status;
-  };
-
-  home.packages = [
-    pkgs.xfce.xfce4-terminal
-    pkgs.eza
-    pkgs.fd
-    pkgs.fzf
-    pkgs.rofi
-    pkgs.firefox
-  ];
-
-  xsession.windowManager.i3 = {
-    enable = true;
-    package = pkgs.i3-gaps;
-    config = {
-      modifier = "Mod4";
-      gaps = {
-        inner = 10;
-        outer = 5;
-      };
-      terminal = "ghostty";
-    };
-  };
+  # home.homeDirectory = "/home/bence";
 
   # home.sessionVariables = {
   #   LANG = "en_US.UTF-8";
@@ -56,16 +27,14 @@ in {
   programs.zsh = {
     enable = true;
     shellAliases = shellAliases;
+    ohMyZsh = {
+    enable = true;
+      plugins = [ "git" "sudo" "docker" "kubectl" ];
+      theme = "robbyrussell";
+    };
   };
 
   programs.ghostty.enable = true;
-
-  # home.pointerCursor = lib.mkIf (isLinux) {
-  #   name = "Vanilla-DMZ";
-  #   package = pkgs.vanilla-dmz;
-  #   size = 128;
-  #   x11.enable = true;
-  # };
 
   home.stateVersion = "25.05";
 }
