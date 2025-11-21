@@ -1,0 +1,31 @@
+name: r-datascience
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Core
+  - r-base>=4.3
+  - r-essentials
+  - jupyterlab
+
+  # R packages (from conda-forge binaries)
+  - r-car
+  - r-lme4
+  - r-nloptr
+  - r-pbkrtest
+  - r-effects
+  - r-alr4
+  - r-ggplot2
+  - r-pastecs
+  - r-psych
+  - r-islr
+  - r-lmtest
+
+
+  # Optional but useful
+  - r-tidyverse
+  - r-dplyr
+  - r-readr
+  - r-data.table
+  - r-shiny
+  - r-irkernel  # for R kernel in Jupyter
