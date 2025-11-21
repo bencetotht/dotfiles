@@ -38,6 +38,10 @@ alias tf="terraform"
 alias otf="op run --env-file .env -- terraform"
 alias k="kubectl"
 alias le="eza -l --git"
+unalias md2pdf 2>/dev/null
+md2pdf() {
+    pandoc "$1" -o "${1%.*}.pdf" -V geometry:top=2cm,bottom=2cm,left=2cm,right=2cm -V papersize=a4 -V fontsize=12pt
+}
 
 # DNS
 alias dns-reset="sudo networksetup -setdnsservers Wi-Fi empty"
